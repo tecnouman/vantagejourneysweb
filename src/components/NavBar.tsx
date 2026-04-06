@@ -1,13 +1,14 @@
 import { ChevronDown, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const navLinks = [
-  { name: 'Home', hasDropdown: false },
-  { name: 'Ticketing', hasDropdown: false },
-  { name: 'Hotels', hasDropdown: false },
-  { name: 'Visas', hasDropdown: false },
-  { name: 'Tours', hasDropdown: true },
-  { name: 'Destinations', hasDropdown: true },
-  { name: 'Pages', hasDropdown: true },
+  { name: 'Home', hasDropdown: false, href: '/' },
+  { name: 'Ticketing', hasDropdown: false, href: '/ticketing' },
+  { name: 'Hotels', hasDropdown: false, href: '#' },
+  { name: 'Visas', hasDropdown: false, href: '#' },
+  { name: 'Tours', hasDropdown: true, href: '#' },
+  { name: 'Destinations', hasDropdown: true, href: '#' },
+  { name: 'Pages', hasDropdown: true, href: '#' },
 ];
 
 type NavBarProps = {
@@ -18,7 +19,7 @@ export default function NavBar({ logoSrc }: NavBarProps) {
   return (
     <nav className="bg-white w-full shadow-sm z-40 relative">
       <div className="max-w-[1400px] mx-auto px-4 md:px-8 flex justify-between items-center h-[90px]">
-        <div className="flex items-center space-x-2 cursor-pointer">
+        <Link to="/" className="flex items-center space-x-2 cursor-pointer">
           {logoSrc ? (
             <img src={logoSrc} alt="Vantage Journeys" className="h-14 w-auto object-contain" />
           ) : (
@@ -39,26 +40,48 @@ export default function NavBar({ logoSrc }: NavBarProps) {
               </div>
             </>
           )}
-        </div>
+        </Link>
 
         <div className="hidden lg:flex items-center space-x-8">
           {navLinks.map((link, index) => (
-            <div key={index} className="group relative cursor-pointer flex items-center space-x-1">
-              <span className="text-gray-700 font-medium text-sm hover:text-[#5b4cc4] transition-colors">
-                {link.name}
-              </span>
-              {link.hasDropdown && (
-                <ChevronDown size={14} className="text-gray-500 group-hover:text-[#5b4cc4] transition-colors" />
-              )}
-            </div>
+            link.href.startsWith('/') ? (
+              <Link
+                key={index}
+                to={link.href}
+                className="group relative cursor-pointer flex items-center space-x-1"
+              >
+                <span className="text-gray-700 font-medium text-sm hover:text-[#5b4cc4] transition-colors">
+                  {link.name}
+                </span>
+                {link.hasDropdown && (
+                  <ChevronDown size={14} className="text-gray-500 group-hover:text-[#5b4cc4] transition-colors" />
+                )}
+              </Link>
+            ) : (
+              <a
+                key={index}
+                href={link.href}
+                className="group relative cursor-pointer flex items-center space-x-1"
+              >
+                <span className="text-gray-700 font-medium text-sm hover:text-[#5b4cc4] transition-colors">
+                  {link.name}
+                </span>
+                {link.hasDropdown && (
+                  <ChevronDown size={14} className="text-gray-500 group-hover:text-[#5b4cc4] transition-colors" />
+                )}
+              </a>
+            )
           ))}
         </div>
 
         <div className="hidden md:flex">
-          <button className="bg-[#5b4cc4] hover:bg-[#4a3ca1] transition-colors text-white font-medium px-6 h-[90px] flex items-center space-x-2 w-40 justify-center cursor-pointer">
+          <Link
+            to="/ticketing"
+            className="bg-[#5b4cc4] hover:bg-[#4a3ca1] transition-colors text-white font-medium px-6 h-[90px] flex items-center space-x-2 w-40 justify-center cursor-pointer"
+          >
             <span>Book Now</span>
             <ArrowRight size={16} />
-          </button>
+          </Link>
         </div>
 
         <div className="lg:hidden flex items-center">
