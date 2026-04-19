@@ -2,11 +2,11 @@ import { Calendar, ArrowRight, ArrowUp } from 'lucide-react';
 
 export default function Ticketing() {
   return (
-    <section id="ticketing" className="mx-auto w-full max-w-[1400px] px-4 md:px-8 mt-10 md:mt-14 scroll-mt-28">
-      <div className="overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-[0_20px_40px_-28px_rgba(17,24,39,0.35)]">
+    <section id="ticketing" className="mx-auto w-full scroll-mt-28">
+      <div className="border border-gray-200 bg-white shadow-[0_20px_40px_-28px_rgba(17,24,39,0.35)]">
         <div className="relative h-[180px] sm:h-[220px] md:h-[260px]">
           <img
-            src="/images/ticketing-header.png"
+            src="/images/breadcrumb-bg.jpg"
             alt="Ticketing section header"
             className="h-full w-full object-cover"
           />
@@ -24,7 +24,7 @@ export default function Ticketing() {
         </div>
 
         <div className="bg-[#F8FAFC] flex flex-col items-center py-12 px-4 relative font-sans text-slate-800">
-          <div className="w-full max-w-[1000px] bg-[#5C5AE8] relative overflow-hidden shadow-sm mb-10 rounded-sm">
+          <div className="w-full max-w-[1400px] bg-[#5C5AE8] relative overflow-hidden shadow-sm mb-10 rounded-sm">
             <div className="absolute left-0 top-0 bottom-0 w-2 bg-[#FF8A00]" />
             <div className="py-5 px-6 text-center">
               <h2 className="text-[#FF8A00] font-bold text-xl mb-1 tracking-wide">
@@ -45,7 +45,7 @@ export default function Ticketing() {
             </p>
           </div>
 
-          <div className="w-full max-w-[900px] bg-white rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] p-8 md:p-12 mb-10">
+          <div className="w-full max-w-[1400px] bg-white rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] p-8 md:p-12 mb-10">
             <form className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-6">
                 <div>
@@ -126,7 +126,7 @@ export default function Ticketing() {
               <div className="pt-4">
                 <button
                   type="button"
-                  className="group flex items-center justify-center gap-3 bg-[#5C5AE8] hover:bg-[#4A48C8] text-white font-semibold py-3.5 px-8 rounded-full shadow-[0_8px_20px_rgba(92,90,232,0.3)] hover:shadow-[0_8px_25px_rgba(92,90,232,0.4)] transition-all duration-300 transform hover:-translate-y-0.5 cursor-pointer"
+                  className="group flex items-center justify-center gap-3 bg-[#5C5AE8] hover:bg-[#ff5a36]  text-white font-semibold py-3.5 px-8 rounded-full shadow-[0_8px_20px_rgba(92,90,232,0.3)] hover:shadow-[0_8px_25px_rgba(92,90,232,0.4)] transition-all duration-300 transform hover:-translate-y-0.5 cursor-pointer"
                 >
                   <span className="text-[15px]">Book Flight</span>
                   <div className="bg-white rounded-full p-1.5 flex items-center justify-center transition-transform duration-300 group-hover:translate-x-1">

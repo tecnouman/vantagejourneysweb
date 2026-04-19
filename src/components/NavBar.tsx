@@ -6,9 +6,22 @@ const navLinks = [
   { name: 'Ticketing', hasDropdown: false, href: '/ticketing' },
   { name: 'Hotels', hasDropdown: false, href: '/hotel-booking' },
   { name: 'Visas', hasDropdown: false, href: '/visa-application' },
-  { name: 'Tours', hasDropdown: true, href: '#' },
-  { name: 'Destinations', hasDropdown: true, href: '#' },
-  { name: 'Pages', hasDropdown: true, href: '#' },
+  { name: 'Tours', hasDropdown: true, href: '#', subLinks: [
+    { name: 'Tour Details', href: '/trip/discover-timeless-temples-and-gardens' }
+  ]},
+  { name: 'Destinations', hasDropdown: true, href: '#', subLinks: [
+    { name: 'Our Destination', href: '/destinations' },
+    { name: 'Japan', href: '/destinations/japan' }
+  ]},
+
+  { name: 'Pages', hasDropdown: true, href: '#', subLinks: [
+    { name: 'About Us', href: '/about-us' },
+    { name: 'Contact Us', href: '/contact-us' },
+    { name: 'Guider Details', href: '/guider-details' },
+    { name: 'Privacy Policy', href: '/privacy-policy' },
+    { name: 'Terms and Conditions', href: '/terms-and-conditions' },
+    { name: 'FAQ', href: '/faq' }
+  ]},
 ];
 
 type NavBarProps = {
@@ -18,10 +31,10 @@ type NavBarProps = {
 export default function NavBar({ logoSrc }: NavBarProps) {
   return (
     <nav className="bg-white w-full shadow-sm z-40 relative">
-      <div className="max-w-[1400px] mx-auto px-4 md:px-8 flex justify-between items-center h-[90px]">
+      <div className="w-full flex justify-between items-center h-[90px] px-4 md:px-8">
         <Link to="/" className="flex items-center space-x-2 cursor-pointer">
           {logoSrc ? (
-            <img src={logoSrc} alt="Vantage Journeys" className="h-14 w-auto object-contain" />
+            <img src={logoSrc} alt="Vantage Journeys" className="h-30 w-auto object-contain" />
           ) : (
             <>
               <div className="relative flex items-center justify-center w-10 h-10">
@@ -42,54 +55,73 @@ export default function NavBar({ logoSrc }: NavBarProps) {
           )}
         </Link>
 
-        <div className="hidden lg:flex items-center space-x-8">
+        {/* Right side container */}
+        <div className="flex items-center">
+          <div className="hidden lg:flex items-center space-x-8 mr-8">
           {navLinks.map((link, index) => (
-            link.href.startsWith('/') ? (
-              <Link
-                key={index}
-                to={link.href}
-                className="group relative cursor-pointer flex items-center space-x-1"
-              >
-                <span className="text-gray-700 font-medium text-sm hover:text-[#5b4cc4] transition-colors">
-                  {link.name}
-                </span>
-                {link.hasDropdown && (
-                  <ChevronDown size={14} className="text-gray-500 group-hover:text-[#5b4cc4] transition-colors" />
-                )}
-              </Link>
-            ) : (
-              <a
-                key={index}
-                href={link.href}
-                className="group relative cursor-pointer flex items-center space-x-1"
-              >
-                <span className="text-gray-700 font-medium text-sm hover:text-[#5b4cc4] transition-colors">
-                  {link.name}
-                </span>
-                {link.hasDropdown && (
-                  <ChevronDown size={14} className="text-gray-500 group-hover:text-[#5b4cc4] transition-colors" />
-                )}
-              </a>
-            )
+            <div key={index} className="group relative">
+              {link.href.startsWith('/') ? (
+                <Link
+                  to={link.href}
+                  className="cursor-pointer flex items-center space-x-1 py-6"
+                >
+                  <span className="text-black text-lg font-medium hover:text-[#5b4cc4] transition-colors">
+                    {link.name}
+                  </span>
+                  {link.hasDropdown && (
+                    <ChevronDown size={14} className="text-gray-500 group-hover:text-[#5b4cc4] transition-colors" />
+                  )}
+                </Link>
+              ) : (
+                <div
+                  className="cursor-pointer flex items-center space-x-1 py-6"
+                >
+                  <span className="text-black text-lg font-medium group-hover:text-[#5b4cc4] transition-colors">
+                    {link.name}
+                  </span>
+                  {link.hasDropdown && (
+                    <ChevronDown size={14} className="text-gray-500 group-hover:text-[#5b4cc4] transition-colors" />
+                  )}
+                </div>
+              )}
+              
+              {/* Dropdown Menu */}
+              {link.hasDropdown && link.subLinks && (
+                <div className="absolute top-full left-0 w-48 bg-white shadow-lg border-t-2 border-[#5b4cc4] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top translate-y-2 group-hover:translate-y-0 z-50">
+                  <div className="py-2">
+                    {link.subLinks.map((subLink, subIndex) => (
+                      <Link
+                        key={subIndex}
+                        to={subLink.href}
+                        className="block px-4 py-2.5 text-black text-lg font-medium hover:text-[#5b4cc4] transition-colors"
+                      >
+                        {subLink.name}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
           ))}
         </div>
 
-        <div className="hidden md:flex">
-          <Link
-            to="/ticketing"
-            className="bg-[#5b4cc4] hover:bg-[#4a3ca1] transition-colors text-white font-medium px-6 h-[90px] flex items-center space-x-2 w-40 justify-center cursor-pointer"
-          >
-            <span>Book Now</span>
-            <ArrowRight size={16} />
-          </Link>
-        </div>
+          <div className="hidden md:flex">
+            <Link
+              to="/ticketing"
+              className="bg-[#5b4cc4] hover:bg-[#ff5a36] transition-colors duration-300 text-white font-medium px-6 h-[90px] flex items-center space-x-2 w-40 justify-center cursor-pointer"
+            >
+              <span>Book Now</span>
+              <ArrowRight size={16} />
+            </Link>
+          </div>
 
-        <div className="lg:hidden flex items-center">
-          <button className="text-gray-700 cursor-pointer">
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
+          <div className="lg:hidden flex items-center ml-4">
+            <button className="text-gray-700 cursor-pointer">
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </nav>

@@ -1,7 +1,6 @@
-import { Mail, MapPin, Users, Camera, MessageCircle, Briefcase, Music } from 'lucide-react';
+import { Mail, MapPin, Camera, MessageCircle, Briefcase, Music } from 'lucide-react';
 
 const socialLinks = [
-  { icon: Users, href: '#' },
   { icon: Camera, href: '#' },
   { icon: MessageCircle, href: '#' },
   { icon: Briefcase, href: '#' },
@@ -14,11 +13,11 @@ export default function TopBar() {
       <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6">
         <div className="flex items-center space-x-2 hover:text-white transition-colors cursor-pointer">
           <Mail size={14} />
-          <span>Info@Vantagejourneys.Com</span>
+          <span>info@vantagejourneys.com</span>
         </div>
         <div className="flex items-center space-x-2 hover:text-white transition-colors cursor-pointer">
           <MapPin size={14} />
-          <span>SUITE NO. 202, 2ND FLOOR, GOHAR CHAMBER, KARACHI</span>
+          <span>Suit 702 7th Floor Balad Trade Center-II, 114 Alamgir Road</span>
         </div>
       </div>
       <div className="flex items-center space-x-4 mt-2 md:mt-0">

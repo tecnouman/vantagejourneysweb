@@ -35,7 +35,7 @@ export default function NavBar({ logoSrc }: NavBarProps) {
                 <span className="text-[#5b4cc4] font-bold text-xl tracking-tight">
                   JOURNEYS<span className="text-[10px] text-gray-500 align-top ml-1">®</span>
                 </span>
-                <span className="text-[8px] text-gray-500 tracking-widest text-right mr-2">(PVT) LTD</span>
+                <span className="text-[8px] text-gray-500 tracking-widest text-right mr-2">(PVT) LTD 00</span>
               </div>
             </>
           )}

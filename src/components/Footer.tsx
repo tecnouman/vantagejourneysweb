@@ -1,27 +1,6 @@
 import { Users, Camera, Briefcase, ArrowRight, Phone, Mail, MapPin, Navigation, ArrowUp } from 'lucide-react';
 import headerLogo from '../assets/header-logo.png';
-import DirectorMessage from './DirectorMessage';
 
-const directors = [
-  {
-    title: 'Board Of Director',
-    message:
-      'Arsalan Ghouri is the visionary Director of Vantage Journeys, bringing years of expertise in premium travel management and strategic business development. He specializes in designing innovative travel solutions, fostering strong global partnerships... Arsalan Ghouri continues to lead Vantage Journeys with professionalism, innovation, and a forward-looking approach.',
-    name: 'Arsalan Ghouri',
-    role: 'Director',
-    imageUrl:
-      'https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80',
-  },
-  {
-    title: 'Board Of Director',
-    message:
-      'Manahil is the visionary Director of Vantage Journeys, bringing years of expertise in premium travel management and strategic business development. He specializes in designing innovative travel solutions, fostering strong global partnerships... Arsalan Ghouri continues to lead Vantage Journeys with professionalism, innovation, and a forward-looking approach.',
-    name: 'Manahil',
-    role: 'Director',
-    imageUrl:
-      'https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80',
-  },
-];
 
 const quickLinks = ['All Destination', 'Our Team', 'Tour Places', 'Reviews', 'Link Tree'];
 const legalDocs = ['Vantage Journeys NTN', 'DTS License', 'IATA Certification'];
@@ -29,7 +8,6 @@ const legalDocs = ['Vantage Journeys NTN', 'DTS License', 'IATA Certification'];
 export default function Footer() {
   return (
     <footer className="w-full bg-white pt-24 pb-6 border-t border-gray-100 flex flex-col items-center">
-      <DirectorMessage directors={directors} />
 
       <div className="w-full max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 pt-16 border-t border-gray-100">
         <div className="flex flex-col">
@@ -80,7 +58,7 @@ export default function Footer() {
               <div className="w-10 h-10 rounded-full bg-[#ffb703]/10 text-[#ffb703] flex items-center justify-center shrink-0 mt-0.5"><MapPin size={18} strokeWidth={2.5} /></div>
               <div className="flex flex-col pt-1">
                 <span className="font-semibold text-gray-900 mb-0.5">Location</span>
-                <span>Suite 202. 2nd Floor Gohar Chamber Near Duty Free Shop Shahrah-e-Faisal Karachi</span>
+                <span>Suit 702 7th Floor Balad Trade Center-II, 114 Alamgir Road, Bahadurabad Bahadur Yar Jang CHS, Karachi, 74800</span>
               </div>
             </li>
           </ul>
@@ -102,7 +80,7 @@ export default function Footer() {
       <div className="w-full max-w-7xl mx-auto px-6 mt-16">
         <div className="w-full border-t border-gray-100 pt-6 flex flex-col md:flex-row items-center justify-between gap-4 relative">
           <p className="text-sm text-gray-500 font-medium">
-            © 2025 <span className="text-[#5d58d8] font-bold">Vantage Journeys</span>. All rights reserved.
+            © 2026 <span className="text-[#5d58d8] font-bold">Vantage Journeys</span>. All rights reserved.
           </p>
 
           <button
@@ -112,12 +90,6 @@ export default function Footer() {
           >
             <ArrowUp className="w-5 h-5" />
           </button>
-          {/* <button
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="absolute right-0 -top-6 w-12 h-12 bg-[#ff5a36] text-white rounded-full flex items-center justify-center hover:bg-[#e04a29] transition-all duration-300 shadow-lg shadow-[#ff5a36]/30 group cursor-pointer"
-          >
-            <ArrowRight className="w-6 h-6 -rotate-90 group-hover:-translate-y-1 transition-transform duration-300" strokeWidth={2.5} />
-          </button> */}
         </div>
       </div>
     </footer>

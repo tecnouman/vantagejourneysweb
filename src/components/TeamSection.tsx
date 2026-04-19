@@ -5,14 +5,14 @@ const teamMembers = [
     id: 1,
     name: "Shumaila Arif",
     role: "Tourist Guide",
-    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop",
+    image: "/images/mrs_arsalan.png",
     socials: { fb: "#", yt: "#", ig: "#" }
   },
   {
     id: 2,
-    name: "Arsalan & Manahil",
+    name: "Arsalan",
     role: "Tourist Guide",
-    image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=800&auto=format&fit=crop",
+    image: "/images/arsalan.png",
     socials: { fb: "#", yt: "#", ig: "#" }
   }
 ];

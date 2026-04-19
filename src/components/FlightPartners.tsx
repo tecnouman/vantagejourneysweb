@@ -38,7 +38,7 @@ const partners = [
 
 export default function FlightPartners() {
   return (
-    <div className="w-full max-w-6xl mt-32 mb-12 flex flex-col items-center">
+    <div className="w-full max-w-6xl mx-auto mt-32 mb-12 flex flex-col items-center">
       <h2 className="text-3xl sm:text-4xl font-bold text-[#111827] mb-12">
         Our Flight Partners
       </h2>

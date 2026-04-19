@@ -12,6 +12,8 @@ type DirectorMessageProps = {
   directors: Director[];
 };
 
+
+
 export default function DirectorMessage({ directors }: DirectorMessageProps) {
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -20,9 +22,11 @@ export default function DirectorMessage({ directors }: DirectorMessageProps) {
   }
 
   const showIndicators = directors.length > 1;
-
+  
+  
+  
   return (
-    <div className="max-w-4xl mx-auto px-6 text-center mb-20">
+    <div className="max-w-4xl mx-auto px-6 text-center mb-20 mt-10">
       <div className="overflow-hidden">
         <div
           className="flex transition-transform duration-500 ease-in-out"
@@ -33,7 +37,7 @@ export default function DirectorMessage({ directors }: DirectorMessageProps) {
               <h2 className="text-3xl sm:text-4xl font-bold text-[#111827] mb-8">{director.title}</h2>
               <p className="text-gray-500 italic text-sm md:text-base leading-relaxed mb-10">"{director.message}"</p>
               <div className="flex items-center justify-center gap-4">
-                <div className="w-24 h-24 rounded-full border-4 border-white shadow-[0_8px_30px_-4px_rgba(0,0,0,0.15)] overflow-hidden">
+                <div className="w-80 h-80 rounded-full border-4 border-white shadow-[0_8px_30px_-4px_rgba(0,0,0,0.15)] overflow-hidden">
                   <img src={director.imageUrl} alt={director.name} className="w-full h-full object-cover" />
                 </div>
                 <div className="text-left">
